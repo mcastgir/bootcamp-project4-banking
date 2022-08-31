@@ -15,10 +15,14 @@
 package com.nttdata.bootcamp.banking.service;
 
 import com.nttdata.bootcamp.banking.model.document.Holder;
+import com.nttdata.bootcamp.banking.model.dto.HolderDto;
+import reactor.core.publisher.Mono;
 
 /**
  * Clase para los métodos de la interface de servicio del titular.
  */
 public interface HolderService extends GenericService<Holder, String> {
+
+    public Mono<Holder> insertHolderAndPerson(HolderDto holderDto);
 
 }

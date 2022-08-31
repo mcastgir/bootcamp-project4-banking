@@ -15,6 +15,7 @@
 package com.nttdata.bootcamp.banking.controller;
 
 import com.nttdata.bootcamp.banking.model.document.Holder;
+import com.nttdata.bootcamp.banking.model.dto.HolderDto;
 import com.nttdata.bootcamp.banking.service.HolderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,6 +43,12 @@ public class HolderController {
     @PostMapping
     public Mono<ResponseEntity<Holder>> create(@RequestBody Holder holder){
         return this.holderService.insert(holder)
+                .map(h -> new ResponseEntity<>(h, HttpStatus.OK));
+    }
+
+    @PostMapping("/createHolderAndPerson")
+    public Mono<ResponseEntity<Holder>> createHolderAndPerson(@RequestBody HolderDto holderDto){
+        return this.holderService.insertHolderAndPerson(holderDto)
                 .map(h -> new ResponseEntity<>(h, HttpStatus.OK));
     }
 

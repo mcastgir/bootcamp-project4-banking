@@ -15,12 +15,22 @@ import org.springframework.web.reactive.function.client.WebClient;
 @EnableWebFlux
 public class WebFluxConfig implements WebFluxConfigurer {
 
+    @Value("${project.url.server.person}")
+    private String urlServerPerson;
     @Value("${project.url.server.client}")
     private String urlServerClient;
     @Value("${project.url.server.product}")
     private String urlServerProduct;
 
     private static final Logger log = LoggerFactory.getLogger(WebFluxConfig.class);
+
+    @Bean(name = "WcPerson")
+    public WebClient getWcPerson () {
+        return WebClient.builder ()
+                .baseUrl (urlServerPerson)
+                .defaultHeader (HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .build();
+    }
 
     @Bean(name = "WcClient")
     public WebClient getWcClient () {

@@ -14,6 +14,7 @@
 
 package com.nttdata.bootcamp.banking.model.document;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
@@ -25,24 +26,16 @@ import java.util.Date;
  * Clase de tipo document para obtener o establecer los datos de cada atributo.
  */
 @Data
+@Builder
 @ToString
 @Document(collection="holder")
 public class Holder {
 
-    /** Identificador de Titular */
     @Id
     private String id;
-
-    /** Código de Persona */
     private String codePerson;
-
-    /** Número de Cuenta */
     private String accountNumber;
-
-    /** Fecha de registro */
     private Date dateRegister;
-
-    /** Estao del registro */
     private boolean state;
 
 }

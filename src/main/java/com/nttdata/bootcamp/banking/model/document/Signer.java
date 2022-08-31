@@ -29,20 +29,11 @@ import java.util.Date;
 @Document(collection="signer")
 public class Signer {
 
-    /** Identificador de Firmante */
     @Id
     private String id;
-
-    /** Código de Persona */
     private String codePerson;
-
-    /** Número de cuenta */
     private String accountNumber;
-
-    /** Fecha de registro */
     private Date dateRegister;
-
-    /** Estado de registro */
     private boolean state;
 
 }

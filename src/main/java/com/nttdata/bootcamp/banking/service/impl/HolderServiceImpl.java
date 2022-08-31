@@ -17,8 +17,11 @@ package com.nttdata.bootcamp.banking.service.impl;
 import com.nttdata.bootcamp.banking.model.dao.AccountDao;
 import com.nttdata.bootcamp.banking.model.dao.HolderDao;
 import com.nttdata.bootcamp.banking.model.document.Holder;
+import com.nttdata.bootcamp.banking.model.document.Person;
+import com.nttdata.bootcamp.banking.model.dto.HolderDto;
 import com.nttdata.bootcamp.banking.service.AccountService;
 import com.nttdata.bootcamp.banking.service.HolderService;
+import com.nttdata.bootcamp.banking.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +45,8 @@ public class HolderServiceImpl implements HolderService {
     private HolderDao holderDao;
     @Autowired
     private AccountService accountService;
+    @Autowired
+    private PersonService personService;
 
     /**
      * Método que realiza la acción insertar datos del document
@@ -54,6 +59,21 @@ public class HolderServiceImpl implements HolderService {
                 .doFirst(() -> log.info("Begin Insert Holder"))
                 .doOnNext(h -> log.info(h.toString()))
                 .doAfterTerminate(() -> log.info("Finish Insert Holder"));
+    }
+
+    @Override
+    public Mono<Holder> insertHolderAndPerson(HolderDto holderDto) {
+        Person person = holderDto.getPerson();
+        personService.findByCode(person.getCode())
+                .switchIfEmpty(personService.insert(person))
+                .subscribe();
+        Holder holder = Holder.builder()
+                .codePerson(person.getCode())
+                .accountNumber(holderDto.getAccountNumber())
+                .dateRegister(new Date())
+                .state(true)
+                .build();
+        return insert(holder);
     }
 
     /**

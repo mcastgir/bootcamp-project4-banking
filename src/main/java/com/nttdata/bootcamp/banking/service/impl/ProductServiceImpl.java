@@ -1,6 +1,6 @@
 package com.nttdata.bootcamp.banking.service.impl;
 
-import com.nttdata.bootcamp.banking.model.dto.Product;
+import com.nttdata.bootcamp.banking.model.document.Product;
 import com.nttdata.bootcamp.banking.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

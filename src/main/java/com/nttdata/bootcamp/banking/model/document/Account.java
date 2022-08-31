@@ -29,35 +29,17 @@ import java.util.Date;
 @Document(collection="account")
 public class Account {
 
-    /** Identificador de la Cuenta */
     @Id
     private String id;
-
-    /** Número de cuenta */
     private String accountNumber;
-
-    /** Número de cuenta interbancaria */
     private String accountInterbankNumber;
-
-    /** Código de Cliente */
     private String codeClient;
-
-    /** Código de Producto */
     private String codeProduct;
-
-    /** Fecha de registro */
     private Date dateRegister;
-
-    /** Línea de Crédito */
     private double creditLine;
-
     private double availableAmount;
-
-    /** Código de Estado de Cuenta */
     private String codeAccountState;
-
     private double amountMinimunOpen;
-
     private String accountType;
 
 

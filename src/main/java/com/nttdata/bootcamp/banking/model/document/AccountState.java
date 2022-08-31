@@ -27,17 +27,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="account_state")
 public class AccountState {
 
-    /** Identificador de Estado de Cuenta */
     @Id
     private String id;
-
-    /** Código de Estado de Cuenta */
     private String code;
-
-    /** Nombre de Estado de Cuenta */
     private String name;
-
-    /** Estado de registro */
     private boolean state;
 
 }

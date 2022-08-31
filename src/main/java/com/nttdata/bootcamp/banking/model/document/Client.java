@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.banking.model.dto;
+package com.nttdata.bootcamp.banking.model.document;
 
 import lombok.Data;
 import lombok.ToString;
