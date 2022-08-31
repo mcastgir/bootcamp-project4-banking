@@ -29,31 +29,15 @@ import java.util.Date;
 @Document(collection="movement")
 public class Movement {
 
-    /** Identificador de Movimiento */
     @Id
     private String id;
-
-    /** Código de Movimiento */
     private String code;
-
-    /** Número de cuenta */
     private String accountNumber;
-
     private String accountNumberDestination;
-
-    /** Fecha de registro */
     private Date dateRegister;
-
-    /** Código de tipo de movimiento */
     private String codeMovementType;
-
-    /** Monto actual */
     private double previousAmount;
-
-    /** Monto en movimiento */
     private double movementAmount;
-
-    /** Monto final */
     private double finalAmount;
 
 }

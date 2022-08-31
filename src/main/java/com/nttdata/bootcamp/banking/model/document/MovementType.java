@@ -27,20 +27,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="movement_type")
 public class MovementType {
 
-    /** Identificador de Tipo de Movimiento */
     @Id
     private String id;
-
-    /** Código de Tipo Movimiento */
     private String code;
-
-    /** Identificador de Nombre de Tipo de Movimiento */
     private String name;
-
-    /** Tipo de Operación */
     private String operationType;
-
-    /** Estado de registro */
     private boolean state;
 
 }

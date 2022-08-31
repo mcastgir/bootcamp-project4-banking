@@ -8,9 +8,19 @@ spring:
       uri: http://localhost:8084
       username: root
       password: rHQPJeecA3YTdVkX
+  kafka:
+    producer:
+      bootstrap-servers: 'localhost:9092'
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+kafka:
+    topic:
+      name: topic-person
 
 project:
   url:
     server:
+      person: http://localhost:8085
       client: http://localhost:8086
       product: http://localhost:8087

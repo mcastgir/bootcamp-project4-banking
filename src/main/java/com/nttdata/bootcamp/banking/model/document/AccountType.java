@@ -29,14 +29,9 @@ import java.util.Date;
 @Document(collection="account_type")
 public class AccountType {
 
-    /** Identificador de tipo de cuenta */
     @Id
     private String id;
-
     private String code;
     private String name;
-
-
-
 
 }

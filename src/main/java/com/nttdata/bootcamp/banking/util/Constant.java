@@ -41,17 +41,4 @@ public  class Constant {
     public static final  String ACCOUNT_TYPE_VIP ="VIP";
     public static final  String ACCOUNT_TYPE_PYME ="PYM";
 
-    public static final  int NUMERO_CERO =0;
-    public static final  int NUMERO_UNO =1;
-    public static final  int NUMERO_DOS =2;
-    public static final  int NUMERO_TRES =3;
-    public static final  int NUMERO_CUATRO =4;
-    public static final  int NUMERO_CINCO =5;
-    public static final  int NUMERO_SEIS =6;
-    public static final  int NUMERO_SIETE =7;
-    public static final  int NUMERO_OCHO =8;
-    public static final  int NUMERO_NUEVE =9;
-
-
-
 }
